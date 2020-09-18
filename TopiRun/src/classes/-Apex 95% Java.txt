@@ -1,0 +1,14 @@
+-Apex 95% Java
+-OO
+-Tudo é objeto
+-Generics
+-Enum (Limitado)
+-NÃO TEM PACKAGE/NAMESPACE
+-Polimorfismo
+   -extends (classe concreto)
+   abstract (classe abstrata)
+   interface (max. abstração)
+   retorno covariante (não suportado)
+   metodo tipado com generics
+
+
