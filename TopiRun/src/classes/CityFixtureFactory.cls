@@ -1,22 +1,34 @@
+/**
+ * @author fernandalima - topirun2020
+ */
 @isTest
-//Run All Tests
 public class CityFixtureFactory {
-    newNomeObjeto --> cria a instancia do mesmo
-    createNomeObjet ---> com os parametros do New chama o insere sobrecarrega
-    createNomeObjet ---> City insere no banco
 
-    public City__c newCity () {
-        return createdCity (newCity(ibge, city));
+    //static SObject newNomeObjeto --> cria a instancia do mesmo 
+    //static SObject createNomeObject ---> com os parametros do New chama o insere
+    //static SObject createNomeObject ---> City insere no banco
+
+    public static City__c newCity () {
+        return newCity ('3550308', 'São Paulo');
     }
-    
-    public City__c newCity (Sring ibge, String city) {
-        return new createdCity (newCity(ibge, city));
+
+    public static City__c newCity (String ibge, String city) {
+        return new City__c ( IbgeCode__c = ibge
+                        , CityName__c = city );
+
     }
-    
-    public City__c creatCity () {
-        return createdCity (newCity(ibge, city));
+
+    public static City__c createCity (String ibge, String city) {
+        return createCity (newCity(ibge, city));
     }
-    
-    public City__c creatCity (Sring ibge, String city) {
-        return new createdCity (newCity(ibge, city));
+
+    public static City__c createCity () {
+        return createCity (newCity());
+    }
+
+    public static City__c createCity (City__c city) {
+        insert city;
+        return city;
+    }
+
 }
